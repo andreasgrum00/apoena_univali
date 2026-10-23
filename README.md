@@ -1,36 +1,32 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Apoena · Chapa 01 — site do Plano de Gestão
 
-## Getting Started
+Site de campanha feito em Next.js (App Router) + Material UI, com o texto do PDF "[APOENA] PLANO DE GESTÃO".
 
-First, run the development server:
+## Rodar
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Abra http://localhost:3000. Para gerar a versão de produção: `npm run build && npm start`.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Onde editar
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- **Textos**: `src/content/` (`institucional.ts`, `equipe.ts`, `propostas.ts`). Marcação: `**negrito**`, `__sublinhado__`, `*itálico*`, `\n` para quebra de linha.
+- **Cores**: `src/cores.ts` (tiradas do PDF). Fonte: Montserrat, carregada em `src/app/layout.tsx`.
+- **Imagens**: `public/recortes` (colagens), `public/equipe` (fotos) e `public/fotos`, todas extraídas do PDF.
+- **Estrofe da página "Nossas propostas"**: preencha `estrofe.linhas` em `src/content/propostas.ts`; o quadro só aparece quando houver texto.
 
-## Learn More
+## Rotas
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+| Rota | Conteúdo |
+| --- | --- |
+| `/` | Capa, "Apoena" e sumário |
+| `/carta` | Carta aberta do presidente |
+| `/equipe` | Nossa equipe |
+| `/dce` | O que é o DCE? |
+| `/propostas` e `/propostas/[slug]` | Nossas propostas (uma página por proposta) |
+| `/universidade-gratuita` | Universidade gratuita |
+| `/laacs`, `/laacs/equipe`, `/laacs/propostas/[slug]` | LAACS |
+| `/ala`, `/ala/propostas/[slug]` | ALA |

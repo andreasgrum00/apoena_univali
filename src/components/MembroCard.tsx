@@ -3,7 +3,7 @@ import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import { rich, plain } from "./RichText";
 import type { Membro } from "@/content/equipe";
-import { cores } from "@/theme";
+import { cores } from "@/cores";
 
 const variantes = {
   dce: { moldura: cores.lavanda, faixa: cores.lavanda, nome: cores.branco, cargo: cores.branco, bio: cores.preto },
@@ -14,10 +14,12 @@ export default function MembroCard({
   membro,
   invertido,
   variante = "dce",
+  prioridade,
 }: {
   membro: Membro;
   invertido?: boolean;
   variante?: keyof typeof variantes;
+  prioridade?: boolean;
 }) {
   const v = variantes[variante];
   const giro = invertido ? 4 : -4;
@@ -50,6 +52,7 @@ export default function MembroCard({
           src={membro.foto}
           alt={`Foto de ${plain(membro.nome)}`}
           fill
+          priority={prioridade}
           sizes="240px"
           style={{ objectFit: "cover", objectPosition: membro.enquadramento ?? "50% 35%" }}
         />

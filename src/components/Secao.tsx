@@ -4,7 +4,7 @@ import Container from "@mui/material/Container";
 import Typography from "@mui/material/Typography";
 import type { SxProps, Theme } from "@mui/material/styles";
 import { rich } from "./RichText";
-import { cores } from "@/theme";
+import { cores } from "@/cores";
 import type { Tom } from "@/content/propostas";
 
 export const fundos: Record<Tom, { bg: string; texto: string }> = {

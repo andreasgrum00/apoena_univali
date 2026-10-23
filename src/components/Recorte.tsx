@@ -9,13 +9,11 @@ export default function Recorte({
   alt = "",
   sx,
   priority,
-  sizes = "(max-width: 600px) 50vw, 360px",
 }: {
   src: string;
   alt?: string;
   sx?: SxProps<Theme>;
   priority?: boolean;
-  sizes?: string;
 }) {
   const [w, h] = dimensoes[src] ?? [400, 400];
   return (
@@ -23,7 +21,8 @@ export default function Recorte({
       aria-hidden={alt ? undefined : true}
       sx={[{ pointerEvents: "none", "& img": { width: "100%", height: "auto", display: "block" } }, ...(Array.isArray(sx) ? sx : [sx])]}
     >
-      <Image src={src} alt={alt} width={w} height={h} sizes={sizes} priority={priority} />
+      {/* Os recortes já foram exportados em WebP leve com transparência; servidos como estão */}
+      <Image src={src} alt={alt} width={w} height={h} priority={priority} unoptimized />
     </Box>
   );
 }

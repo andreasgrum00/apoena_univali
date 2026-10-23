@@ -9,6 +9,7 @@ export type Proposta = {
   paragrafos: string[];
   imagem: string;
   tom: Tom;
+  textoAzul?: boolean;
 };
 
 // Estrofe citada na abertura de "Nossas propostas" (página 11 do PDF).
@@ -208,6 +209,7 @@ export const propostasDce: Proposta[] = [
     titulo: "**PORTAL DE TRANSPARÊNCIA E PRESTAÇÃO DE CONTAS**",
     imagem: "/recortes/notebook-2.webp",
     tom: "claro",
+    textoAzul: true,
     paragrafos: [
       "Defender uma universidade democrática também significa garantir que a comunidade acadêmica tenha acesso claro às informações sobre a utilização de seus recursos. Por isso, **__propomos a criação de um Portal de Transparência da UNIVALI, com informações organizadas, acessíveis e atualizadas.__**",
       "O portal deverá apresentar dados sobre arrecadação com mensalidades, recursos públicos recebidos, investimentos em ensino, pesquisa, extensão, bolsas, infraestrutura e tecnologia, além de contratos, convênios, parcerias e execução orçamentária.",

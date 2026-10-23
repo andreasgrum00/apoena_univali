@@ -20,7 +20,7 @@ import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import { menu, type ItemMenu } from "@/content/navegacao";
-import { cores } from "@/theme";
+import { cores } from "@/cores";
 
 function ativo(pathname: string, href: string) {
   return href === "/" ? pathname === "/" : pathname === href || pathname.startsWith(href + "/");

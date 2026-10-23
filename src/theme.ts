@@ -1,17 +1,7 @@
 "use client";
 
 import { createTheme } from "@mui/material/styles";
-
-// Cores tiradas do PDF do plano de gestão
-export const cores = {
-  azul: "#1D3784",
-  lavanda: "#6A83E2",
-  lavandaClara: "#7F94E4",
-  azulVivo: "#4682FF",
-  claro: "#F4F2F1",
-  branco: "#FFFFFF",
-  preto: "#000000",
-};
+import { cores } from "./cores";
 
 const theme = createTheme({
   palette: {
